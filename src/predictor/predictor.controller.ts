@@ -11,7 +11,7 @@ export class PredictorController {
     constructor(public readonly predictorService: PredictorService) {}
 
     @Post()
-    public predict(@Body() indicators: IndicatorsDto): ResultDto {
-        return this.predictorService.predict(indicators);
+    public async predict(@Body() indicators: IndicatorsDto): Promise<ResultDto> {
+        return await this.predictorService.predict(indicators);
     }
 }

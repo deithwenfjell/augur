@@ -1,8 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 
 export class IndicatorsDto {
-@ApiProperty({ description: '0 = no diabetes 1 = prediabetes 2 = diabetes'})
-public Diabetes_012?: number;
 
 @ApiProperty({ description: '0 = no high BP 1 = high BP'})
 public HighBP: number;
