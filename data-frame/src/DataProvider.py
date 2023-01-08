@@ -113,14 +113,14 @@ class DataProvider:
         plt.figure(16).suptitle('Education')
         plt.hist(data_visualisation.Education)
 
-        data_visualisation.Income[data_visualisation['Income'] == 1] = 'Menej ako $10,000'
-        data_visualisation.Income[data_visualisation['Income'] == 2] = 'Menej ako $10,000'
-        data_visualisation.Income[data_visualisation['Income'] == 3] = 'Menej ako $10,000'
-        data_visualisation.Income[data_visualisation['Income'] == 4] = 'Menej ako $10,000'
-        data_visualisation.Income[data_visualisation['Income'] == 5] = 'Menej ako $35,000'
-        data_visualisation.Income[data_visualisation['Income'] == 6] = 'Menej ako $35,000'
-        data_visualisation.Income[data_visualisation['Income'] == 7] = 'Menej ako $35,000'
-        data_visualisation.Income[data_visualisation['Income'] == 8] = '$75,000 alebo viac'
+        data_visualisation.Income[data_visualisation['Income'] == 1] = "Menej ako $9,999"
+        data_visualisation.Income[data_visualisation['Income'] == 2] = "$10,000 - $14,999"
+        data_visualisation.Income[data_visualisation['Income'] == 3] = "$15,000 - $19,999"
+        data_visualisation.Income[data_visualisation['Income'] == 4] = "$20,000 - $24,999"
+        data_visualisation.Income[data_visualisation['Income'] == 5] = "$25,000 - $34,999"
+        data_visualisation.Income[data_visualisation['Income'] == 6] = "$35,000- $49,999"
+        data_visualisation.Income[data_visualisation['Income'] == 7] = "$50,000- $74,999"
+        data_visualisation.Income[data_visualisation['Income'] == 8] = "$75,000 alebo viac"
         plt.figure(17).suptitle('Income')
         plt.hist(data_visualisation.Income)
 
@@ -149,7 +149,6 @@ class DataProvider:
 
         plt.figure(21).suptitle('MentHlth')
         plt.hist(data_visualisation.MentHlth)
-
 
     def __clean_data(self):
         self.__data = self.__data.drop_duplicates()
