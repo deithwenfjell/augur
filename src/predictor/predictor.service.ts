@@ -19,7 +19,6 @@ export class PredictorService {
   public async predict(indicators: IndicatorsDto): Promise<ResultDto> {
     const indicatorsTensorInputArray = new IndicatorsTensorInputArray(indicators)
     const indicatorsTensor = tf.tensor(indicatorsTensorInputArray.tensorArray);
-    // indicatorsTensor.reshape([null,21])
     const model = await tf.loadLayersModel('file://data-frame/trained_model/model.json');
     const prediction: Tensor1D = <Tensor<Rank.R1>>model.predict(indicatorsTensor);
     const predictionData = prediction.dataSync();
